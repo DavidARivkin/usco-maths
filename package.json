@@ -1,0 +1,14 @@
+{
+  "name": "usco-maths",
+  "main": "",
+  "description": "maths library for usco",
+  "author": "Mark kaosat-dev Moissette",
+  "license": "MIT",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "",
+    "grunt-browserify": "",
+    "browserify": "",
+    "coffeeify": ""
+  }
+}
