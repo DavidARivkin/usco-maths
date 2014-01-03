@@ -1,11 +1,15 @@
 {
   "name": "usco-maths",
-  "main": "",
+  "main": "lib/maths.js",
   "description": "maths library for usco",
   "author": "Mark kaosat-dev Moissette",
   "license": "MIT",
   "version": "0.0.1",
+  "dependencies":{
+    "three-js": "git://github.com/usco/three.js.git"
+  },
   "devDependencies": {
+    "jasmine-node": "",
     "grunt": "",
     "grunt-browserify": "",
     "browserify": "",
