@@ -3,7 +3,8 @@ THREE = require 'three' #TODO: fix three-math requiring
 
 ###*
   *All classes , functions etc defined here are simple wrappers, to make "logical" namespacing
-  *easier (ie Maths.Vector2 instead of THREE.Vector2), and to add a level of indirection between api and implementation
+  *easier (ie Maths.Vector2 instead of THREE.Vector2), and to add a level of indirection between api and implementation:
+  ie we can decouple changes in the THREE.js api from our own
   * 
 ###
 
@@ -12,13 +13,25 @@ THREE = require 'three' #TODO: fix three-math requiring
 ###
 
 class Vector3 extends THREE.Vector3
+  clone:->
+    return new Vector3( this.x, this.y, this.z )
 
 class Vector2 extends THREE.Vector2
+  clone:->
+    return new Vector2( this.x, this.y )
 
 #lines, curves  
-class SplineCurve3 extends THREE.SplineCurve3
-  
+class Line3 extends THREE.Line3
+  clone:->
+    return new Line3().copy( this )
+
 class Spline extends THREE.Spline
+  clone:->
+    return new Spline( this.points )
+
+class SplineCurve3 extends THREE.SplineCurve3
+  clone:->
+    return new SplineCurve3( this.points )
 
 class ArcCurve extends THREE.ArcCurve
 
@@ -27,7 +40,6 @@ class CubicBezierCurve3 extends THREE.CubicBezierCurve3
 
 class QuadraticBezierCurve3 extends THREE.QuadraticBezierCurve3
 
-#other
 
 
 module.exports = 
