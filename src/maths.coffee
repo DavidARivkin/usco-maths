@@ -12,19 +12,13 @@ THREE = require 'three' #TODO: fix three-math requiring
 ###
 
 class Vector3 extends THREE.Vector3
-  constructor:( options )->
-    super(options)
 
 class Vector2 extends THREE.Vector2
-  constructor:( options )->
-    super(options)
 
 #lines, curves  
 class SplineCurve3 extends THREE.SplineCurve3
   
 class Spline extends THREE.Spline
-  constructor:( options )->
-    super(options)
 
 class ArcCurve extends THREE.ArcCurve
 
